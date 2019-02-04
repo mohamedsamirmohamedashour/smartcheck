@@ -17,7 +17,7 @@ pipeline {
    stage('ECR push') {
      steps {
        script {
-         docker.withRegistry('650143975734.dkr.ecr.ap-southeast-1.amazonaws.com') {
+         docker.withRegistry('https://650143975734.dkr.ecr.ap-southeast-1.amazonaws.com') {
            docker.image('smartcheck').push(env.IMAGETAG+'-'+env.BUILD_ID)}
          }
  
