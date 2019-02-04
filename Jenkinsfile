@@ -9,7 +9,7 @@ pipeline {
     stage('Docker') {
       steps {
         script {
-          docker.build('650143975734.dkr.ecr.ap-southeast-1.amazonaws.com/smartcheck:latest')
+          docker.build('smartcheck')
         }
 
       }
