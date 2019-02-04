@@ -17,7 +17,7 @@ pipeline {
     stage('ECR') {
       steps {
         script {
-          docker.withRegistry('650143975734.dkr.ecr.ap-southeast-1.amazonaws.com/smartcheck:latest', 'ecr:ap-southeast-1u:demo-ecr-credentials') 
+          docker.withRegistry('650143975734.dkr.ecr.ap-southeast-1.amazonaws.com', 'ecr:ap-southeast-1u:demo-ecr-credentials') 
           
           }
 
