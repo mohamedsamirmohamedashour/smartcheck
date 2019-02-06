@@ -1,0 +1,36 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: train-schedule-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: train-schedule
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: train-schedule-deployment
+  labels:
+    app: train-schedule
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: train-schedule
+  template:
+    metadata:
+      labels:
+        app: train-schedule
+    spec:
+      containers:
+      - name: train-schedule
+        image: 650143975734.dkr.ecr.ap-southeast-1.amazonaws.com/blessed:tomcat-12
+        ports:
+        - containerPort: 8080
