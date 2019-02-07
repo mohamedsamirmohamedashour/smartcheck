@@ -20,7 +20,7 @@ metadata:
   labels:
     app: train-schedule
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: train-schedule
@@ -33,4 +33,4 @@ spec:
       - name: train-schedule
         image: 650143975734.dkr.ecr.ap-southeast-1.amazonaws.com/blessed:$IMAGETAG-$BUILD_ID
         ports:
-        - containerPort: 8080
+        - containerPort: 80
