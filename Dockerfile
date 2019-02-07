@@ -1,2 +1,2 @@
-FROM tomcat:8.0-jre8-alpine
-CMD ["catalina.sh", "run"]
+FROM httpd:alpine
+COPY ./public-html/ /usr/local/apache2/htdocs/
